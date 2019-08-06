@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+
+#MENU_WRAP {
+    position: relative;
+    width: 300px;
+    margin: 10% auto;
+    border: 10px solid rgb(19, 112, 141);
+    padding: 10px;
+}
+
+.MENU_TITLE {
+    text-align: center;
+    margin: 20px auto;  
+    padding: 10px;
+    border-bottom: 4px solid rgba(33, 33, 204, 0.815);
+    font-size: 1.5em;
+    font-style: bold;
+    color: rgb(20, 20, 207);
+}
+
+.CENTER_ALIGN {
+    text-align: center;
+    margin: 50px auto;
+}
+
+a {
+    font-size: 1.2em;
+    font-style: bold;
+    padding: 10px
+}
+
+button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}

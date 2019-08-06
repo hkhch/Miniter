@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tweets</title>
+
+  <link rel="stylesheet" href="../common/common.css" type="text/css">
+  <link rel="stylesheet" href="../tweets/tweets.css" type="text/css">
+</head>
+<body class="TWEETS_PAGE">
+  <!-- MAIN VIEW -->
+  <div class="MINITOR">
+    <!-- 0. USER INFORMATION 영역 -->
+    <div class="USER_AREA">
+      <div class="TOP"></div>
+      <div class="LOGIN_USER"><p>USER ID</p></div>    <!-- LOG IN USER -->
+      <div class="TWEETS_TITLE"><p>TWEETS</p></div>   <!-- TITLE -->   
+      <div class="TWEETS_CNT"><p>0</p></div>          <!-- 전체 TWEETS 수 -->
+    </div>
+    <!-- 1. CONTENTS INSERT 영역 -->
+    <div class="INSERT_AREA">
+      <div><select class="SIGNUP_USER_LIST"></select></div>           <!-- SIGN UP USER -->
+      <div><textarea class="TWEETS_INPUT"></textarea></div>           <!-- TWEETS INPUT -->
+      <div><button class="TWEETS_BUTTON">TWEETS 등록</button></div>    <!-- TWEETS BUTTON -->
+    </div>
+    <!-- 2. VIEW COMMAND 영역 -->
+    <div class="CMD_AREA">
+        <div class="CMD_BUTTON_WRAP">
+          <button class="VIEW_BUTTON">전체보기</button>    <!-- VIEW BUTTON -->
+          <button class="RETURN_BUTTON">메뉴화면</button>  <!-- RETURN BUTTON -->
+        </div>
+    </div>
+    <!-- 3. CONTENTS 영역 -->
+    <div class="CONTENTS_AREA">
+      <!-- JAVASCRIPT로 동적으로 생성되는 ELEMENT -->
+    </div>
+  </div>
+
+  <!-- EXCEPTIOIN VIEW -->
+  <div class="EXCEPTION_VIEW">
+    <!-- 에러시 활성화되는 영역 -->
+    <div>로그인하고 쓰라고 했어 안했어.</div>
+    <button class="EXCEPTION_BUTTON">메뉴화면</button>
+  </div>
+
+  <!-- JAVASCRIPT FILE IMPORT -->
+  <script src="../common/common.js" type="text/javascript"></script>
+  <script src="../../0. TestServer/miniterDefaultData.js" type="text/javascript"></script>
+  <script src="../../0. TestServer/testServer.js" type="text/javascript"></script>
+  <script src="./tweets.js" type="text/javascript"></script>
+</body>
+</html>
+

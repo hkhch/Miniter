@@ -1,0 +1,261 @@
+/***************************************************************
+ * LAYOUT
+***************************************************************/
+/* html, body { height:100%; overflow:hidden } */ 
+
+.TWEETS_PAGE{
+    /* display: flex; */
+    /* justify-content: space-around; */
+    /* align-items: center; */
+    /* height: 100%; */
+    /* vertical-align: middle; */
+    text-align: center;
+    font: "고딕";
+    font-style: bold;
+}
+
+.MINITOR{
+    display: none;
+    position: relative;
+    overflow: hidden;
+    width: 700px;
+    margin: 50px auto;
+    border: 10px solid rgb(19, 112, 141);
+}
+
+.USER_AREA{
+    float: left;
+    width: 170px;
+    /* border: 1px solid black; */
+    margin: 0px;
+    padding: 0px;
+}
+
+.INSERT_AREA{
+    float: right;
+    width: 75%;
+    /* border: 1px solid black; */
+    padding: 10px;
+}
+
+.CMD_AREA{
+    float: right;
+    width: 75%;
+    /* border: 1px solid black; */
+    padding: 10px;
+}
+
+.CONTENTS_AREA{
+    float: right;
+    width: 75%;
+    /* border: 1px solid black; */
+    padding: 10px;
+}
+
+
+/***************************************************************
+ * USER AREA
+***************************************************************/
+.USER_AREA .TOP {
+    height: 100px;
+    margin: 0px;
+    padding: 10px;
+    background-color: rgb(26, 148, 219);
+}
+
+.USER_AREA .LOGIN_USER {
+    height: 100%;
+    text-align: center;
+    vertical-align: middle;
+    margin: 0px;
+    border-right: 1px solid rgb(26, 148, 219);
+    padding: 30px 5px;
+    color: rgb(12, 9, 218);
+}
+
+.USER_AREA .TWEETS_TITLE {
+    text-align: left;
+    margin: 0px;
+    border-right: 1px solid rgb(26, 148, 219);    
+    padding: 5px 10px;
+    color: rgb(2, 2, 34);
+    padding: auto 15px;
+}
+
+.USER_AREA .TWEETS_CNT {
+    text-align: left;
+    margin: 0px;
+    border-right: 1px solid rgb(26, 148, 219);    
+    padding: 5px 10px;
+    color: rgb(15, 81, 180);
+    padding: auto 15px;
+}
+
+
+/***************************************************************
+ * INSERT AREA
+***************************************************************/
+.INSERT_AREA div {
+    position: relative;
+    padding: 10px auto;
+    width : 100%
+}
+
+.SIGNUP_USER_LIST {
+    width: 70%;
+    height: 30px;
+    margin: 2px;
+    border-color: rgb(0, 68, 255);
+    text-align: center;
+}
+
+.TWEETS_INPUT {
+    resize: none;
+    width: 70%;
+    height: 100px;
+    margin: 2px;
+    border: 2px solid rgb(0, 68, 255);
+}
+
+.TWEETS_BUTTON {
+    width: 70%;
+    border: 1px solid rgb(0, 68, 255);
+    color: white;
+    font: "고딕";
+    font-size: 15px;
+    font-style: bold;
+    background-color: #346eeb;
+    padding: 7px 10px;
+    border-radius: 5px;
+}
+
+/***************************************************************
+ * COMMAND AREA
+***************************************************************/
+.CMD_BUTTON_WRAP {
+    display: flex;
+    justify-content: space-between;
+    width : 70%;
+    margin: 2px auto;
+    padding: 7px 5px;
+    border-bottom: 2px solid #346eeb;
+}
+
+.VIEW_BUTTON {
+    width: 34%;
+    border: 1px solid rgb(0, 68, 255);
+    color: white;
+    font: "고딕";
+    font-size: 15px;
+    font-style: bold;
+    background-color: #0ba766;
+    padding: 7px 10px;
+    border-radius: 5px;
+}
+
+.VIEW_BUTTON.hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.RETURN_BUTTON {
+    width: 35%;
+    border: 1px solid rgb(0, 68, 255);
+    color: white;
+    font: "고딕";
+    font-size: 15px;
+    font-style: bold;
+    background-color: #0ba766;
+    padding: 7px 10px;
+    border-radius: 5px;
+}
+
+
+/***************************************************************
+ * CONTENTS AREA
+***************************************************************/
+.CONTENTS {
+    width: 80%;
+    height: 100%;
+    margin-left: auto; 
+    margin-right: auto;
+    list-style:none;
+    padding-left:0px;
+}
+  
+.CONTENT {
+    background-color: rgb(250, 252, 253);
+    
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+    border-radius: 0px;
+    border-bottom: 2px solid rgb(0, 132, 255);
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    width: 100%;
+}
+
+.USERNAME {
+    display: inline-block;
+    text-align: left;
+    font-family: "고딕";
+    font-size: 1.2em;
+    font-weight: bold;
+    color: rgb(38, 128, 211);
+
+    margin-bottom: 0.3em;
+    width: 50%;
+    height: 15px;
+}
+
+.TWEETDATE {
+    display:inline-block;
+    font-family: "고딕";
+    font-style: italic;
+    font-size: 1em;
+    color: gray;
+    text-align: right;
+
+    width: 48%;
+    height: 15px;
+}
+
+.MESSAGE {
+    text-align: left;
+    font-family: "맑은고딕";
+    font-size: 0.9em;
+    color: rgb(35, 16, 199);
+}
+
+.LINE_ONE {
+    display: none;
+    color: rgb(21, 75, 177);
+    border: 1px dashed rgb(21, 75, 177);
+
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+}
+
+.EXCEPTION_VIEW {
+    display: none;
+    color: red;
+    font: "고딕";
+    font-size: 20px;
+    font-style: bold;
+    margin: 300px auto;
+    text-align: center;
+}
+
+.EXCEPTION_BUTTON {
+    text-align: center;
+    margin-top: 50px;
+    border: 1px solid rgb(0, 68, 255);
+    color: white;
+    font: "고딕";
+    font-size: 15px;
+    font-style: bold;
+    background-color: #0ba766;
+    padding: 7px 10px;
+    border-radius: 5px;
+}
+

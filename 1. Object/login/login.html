@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+
+  <!-- CSS FILE IMPORT -->
+  <link rel="stylesheet" href="../common/common.css" type="text/css">
+  <link rel="stylesheet" href="./login.css" type="text/css">
+</head>
+<body>
+  <div class="LOGIN_WRAP">
+    <div id="TITLE_CONTAINER">
+      <!--0. 정적생성영역-->
+      <div class="TITLE">Log in to Miniter</div>
+    </div>
+
+    <div id="INPUT_CONTAINER">
+      <!--1. 동적생성영역 (OBJECT 재사용) -->
+    </div>
+
+    <div id="BUTTON_CONTAINER">
+      <!--2. 정적생성영역 (추후 동적으로 생성되도록 수정 예정) -->
+      <button id="LOGIN_COMPLETE">LOG IN</button>
+      <button id="LOGIN_CANCEL">CANCEL</button>
+    </div>
+  </div> 
+
+  <!-- JAVASCRIPT FILE IMPORT -->
+  <script src="../common/common.js" type="text/javascript"></script>
+  <script src="../../0. TestServer/miniterDefaultData.js" type="text/javascript"></script>
+  <script src="../../0. TestServer/testServer.js" type="text/javascript"></script>
+  <script src="../eSmartInput/eSmartInput.js" type="text/javascript"></script>
+  <script src="./login.js" type="text/javascript"></script>
+</body>
+</html>

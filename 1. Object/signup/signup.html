@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign up</title>
+
+  <link rel="stylesheet" href="../common/common.css" type="text/css">
+  <link rel="stylesheet" href="./signup.css" type="text/css">
+</head>
+<body>
+
+  <div class="SIGNUP_WRAP">
+    <div id="TITLE_CONTAINER">
+      <!--0. 정적생성영역-->
+      <div class="TITLE">Sign up to Miniter</div>
+    </div>
+
+    <div id="INPUT_CONTAINER">
+      <!--1. 동적생성영역 (OBJECT 재사용) -->
+    </div>
+
+    <div id="BUTTON_CONTAINER">
+      <!--2. 정적생성영역 (추후 동적으로 생성되도록 수정 예정) -->
+      <button id="SIGNUP_COMPLETE">SIGN UP</button>
+      <button id="SIGNUP_DELETE">DELETE</button>
+      <button id="SIGNUP_CANCEL">CANCEL</button>
+    </div>
+  </div>  
+      
+  <!-- JAVASCRIPT FILE IMPORT -->
+  <script src="../common/common.js" type="text/javascript"></script>
+  <script src="../../0. TestServer/miniterDefaultData.js" type="text/javascript"></script>  
+  <script src="../..//0. TestServer/testServer.js" type="text/javascript"></script>
+  <script src="../eSmartInput/eSmartInput.js" type="text/javascript"></script>
+  <script src="./signup.js" type="text/javascript"></script>
+</body>
+</html>
