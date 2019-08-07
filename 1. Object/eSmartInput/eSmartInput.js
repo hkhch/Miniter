@@ -11,7 +11,7 @@
 'use strict';
 class ESmartInput {
     // 생성자 함수
-    // 이벤트 CALLBACK 함수는 추후 정리하여 일반화 (현재는 교육용으로 Click이벤트만 처리)
+    // 이벤트 CALLBACK 함수는 추후 정리하여 일반화 (현재는 교육용으로 Key up이벤트만 처리)
     constructor(eParents, inputType, placeholder, onKeyup){
         // 생성 될 때마다 INSTANCE 개수 증가 (정적변수) : SmartInput객체 CSS ID로 사용하기 위해
         ESmartInput.m_TotalInputInstance++;
