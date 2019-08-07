@@ -24,7 +24,8 @@ const ERROR_MESSAGE = {
 };
 
 const ALARM_MESSAGE = {
-    THERE_IS_NOT: "존재하지 않는 ID입니다."
+    THERE_IS_NOT: "존재하지 않는 ID입니다.",
+    BUG_TEST: "버그로 인해 잠시 기능을 잠시 닫습니다."
 };
 
 const BODY_INPUT_ID = {
@@ -67,6 +68,27 @@ class SignUpBody {
         this.eSignUpComplete = document.getElementById("SIGNUP_COMPLETE");
         this.eSignUpDelete = document.getElementById("SIGNUP_DELETE");
         this.eSignUpCancel = document.getElementById("SIGNUP_CANCEL");
+
+        // 로그오프 상태인지 확인 (동작가능모드)
+        let currentLoginUserID = window.sessionStorage.getItem(SESSION_STORAGE.CURRENT_LOGIN_USER);
+
+        // 로그오프 상태
+        if((currentLoginUserID === null) || (currentLoginUserID === "")){
+            let eSignUpWrap = document.getElementsByClassName("SIGNUP_WRAP").item(0);
+            eSignUpWrap.style.display = "block";
+
+            // USER 추가시 CONTENTS SERVER관리 부분 추가 (버그발견)
+            // 일단 DISABLE시킴
+            // this.eSignUpComplete.disabled = true;
+        }
+        // 로그인 상태
+        else{
+            let eExceptionView = document.getElementsByClassName("EXCEPTION_VIEW").item(0);
+            eExceptionView.onclick = this.OnClicExceptionView.bind(this);
+            eExceptionView.style.display = "block";
+
+
+        }
     }
 
     // 0. MEMBER FUNCTION 선언 and 정의
@@ -126,7 +148,12 @@ class SignUpBody {
         if(isThereAlreadySignUpID === true){
             let UserData = this.m_cServerInterface.SearchSignUpData(signUpUserID);
             this.eSignUpComplete.innerHTML = "MODIFY";
+            // this.eSignUpComplete.disabled = false;
             this.eSignUpDelete.style.display = "inline";
+            
+            // DELETE시 기존 자료구조를 지우까 말까 고민 중 (해당 정책에 따라 서버쪽 처리가 달라짐)
+            // 일단 DISABLE시킴
+            // this.eSignUpDelete.disabled = true;
 
             // SIGN UP ELEMENT에 값 채우기
             // this.m_eEnterID.m_eTHIS.disabled = true;
@@ -139,6 +166,10 @@ class SignUpBody {
             this.eSignUpComplete.innerHTML = "SIGN UP";
             this.eSignUpDelete.style.display = "none";
 
+            // USER 추가시 CONTENTS SERVER관리 부분 추가 (버그발견)
+            // 일단 DISABLE시킴
+            // this.eSignUpComplete.disabled = true;
+
             // SIGN UP ELEMENT에 값 채우기
             this.m_eName.setValue("");
             this.m_ePassword.setValue("");
@@ -150,6 +181,11 @@ class SignUpBody {
     onKeyupForName(){
         // 테스트 용으로 바인딩 시킴
     }
+
+    // EVENT HANDLER 정의
+    OnClicExceptionView(){
+        location.href = MAIN_PAGE;
+    };
 };
 
 // LoginBody Class 정의부
@@ -226,6 +262,10 @@ class SignUpCtrl extends Common {
         }
         // 1. 신규 ID인 경우 INSERT 작업진행
         else if(isThereAlreadyUser === false){
+            // 버그로 인해 잠시 기능 중단 (추후 수정예정)
+            this.DisplayMsg(ALARM_MESSAGE.BUG_TEST);
+            return;
+
             // Server 작업 완료 상태를 체크해야 함 (추후체크)
             let result = this.m_cServerInterface.InsertSignUpData(userID, userName, userPW, userProfile);
             this.refreshSignUpBody();
@@ -234,6 +274,10 @@ class SignUpCtrl extends Common {
 
     // EVENT HANDLER 정의
     OnClickEventOnDeleteBtn(){
+        // 버그로 인해 잠시 기능 중단 (추후 수정예정)
+        this.DisplayMsg(ALARM_MESSAGE.BUG_TEST);
+        return;
+
         // 현재 입력 데이터 무결성 체크
         let userID = this.m_cSignUpBody.getElementValue(BODY_INPUT_ID.ENTER_ID);
         let userPW = this.m_cSignUpBody.getElementValue(BODY_INPUT_ID.PASSWORD);

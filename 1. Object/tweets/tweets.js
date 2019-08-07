@@ -172,18 +172,18 @@ class Tweets extends Common {
         let elContentsArea = document.getElementsByClassName(CONTENT_TAG_CLASS.CONTENTS_AREA).item(0);
         let elMinitContentsWrap = document.querySelector(".CONTENTS_AREA ul");
         if(elMinitContentsWrap === null){
-            elMinitContentsWrap = document.createElement("ul");
+            elMinitContentsWrap = document.createElement(TAG.ul);
             elMinitContentsWrap.className = CONTENT_TAG_CLASS.CONTENTS;
             elContentsArea.appendChild(elMinitContentsWrap);
         }
 
         // 1. CONTENT LAYER
-        let elContent = document.createElement("li");
+        let elContent = document.createElement(TAG.li);
         elContent.className = CONTENT_TAG_CLASS.CONTENT;
         // 1.1 TITLE LAYER
-        let elTitleLayer = document.createElement("div");
+        let elTitleLayer = document.createElement(TAG.div);
         // 1.1.1 USER NAME 출력
-        let elUserName = document.createElement("div");
+        let elUserName = document.createElement(TAG.div);
         elUserName.className = CONTENT_TAG_CLASS.USERNAME;
         elUserName.innerHTML = MiniterData[CONTENTS_INDEX.USER];
         elUserName.onmouseenter = this.onMouseEnterOnUserName.bind(this);
@@ -191,21 +191,21 @@ class Tweets extends Common {
         elUserName.onclick = this.onClickOnTweetUserID.bind(this);
         elTitleLayer.appendChild(elUserName);
         // 1.1.2 TWEET DATE 출력
-        let elTweetDate = document.createElement("div");
+        let elTweetDate = document.createElement(TAG.div);
         elTweetDate.className = CONTENT_TAG_CLASS.TWEETDATE;
         elTweetDate.innerHTML = MiniterData[CONTENTS_INDEX.DATE];
         elTitleLayer.appendChild(elTweetDate);
         elContent.appendChild(elTitleLayer);
         // 1.2 Message Layer
-        let elMessageLayer = document.createElement("div");
+        let elMessageLayer = document.createElement(TAG.div);
         // 1.2.1 message 출력
-        let elMessage = document.createElement("div");
+        let elMessage = document.createElement(TAG.div);
         elMessage.className = CONTENT_TAG_CLASS.MESSAGE;
         elMessage.innerHTML = MiniterData[CONTENTS_INDEX.CONTENT];
         elMessageLayer.appendChild(elMessage);
         elContent.appendChild(elMessageLayer);
         // 1.3 Line 출력
-        let elLine = document.createElement("hr");
+        let elLine = document.createElement(TAG.hr);
         elLine.className = CONTENT_TAG_CLASS.LINE_ONE;
         elContent.appendChild(elLine);
      
@@ -287,7 +287,16 @@ class Tweets extends Common {
     }
 
     onClickViewButton(){
-        this.displayMiniterData();
+        // SORT MODE에서만 진행
+        if(this.m_sortMode === 1){
+            // LIST ELEMENT 삭제
+            let elMinitContentsWrap = document.querySelector(".CONTENTS_AREA ul");   
+            while(elMinitContentsWrap.firstChild) {
+                elMinitContentsWrap.removeChild(elMinitContentsWrap.firstChild);
+            }
+
+            this.displayMiniterData();
+        }
     }
 
     onClickReturnButton(){

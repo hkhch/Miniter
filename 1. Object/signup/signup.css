@@ -1,4 +1,8 @@
+/***************************************************************
+ * SIGNUP VIEW
+***************************************************************/
 .SIGNUP_WRAP{
+    display: none;
     width: 500px;
     margin: 10% auto;
     border: 10px solid #346eeb;
@@ -42,3 +46,18 @@ button {
 button#SIGNUP_DELETE{
     display: none;
 }
+
+
+/***************************************************************
+ * EXCEPTION VIEW
+***************************************************************/
+.EXCEPTION_VIEW {
+    display: none;
+    color: red;
+    font: "고딕";
+    font-size: 20px;
+    font-style: bold;
+    margin: 300px auto;
+    text-align: center;
+}
+
